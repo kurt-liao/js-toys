@@ -1,0 +1,109 @@
+body {
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-rows: 4fr 3fr 2fr 1fr;
+	height: 100vh;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.actions {
+	display: flex;
+	position: absolute;
+	top: 10%;
+	right: 0;
+	transform: translateX(-20px);
+	z-index: 10;
+}
+
+.button {
+	position: relative;
+	overflow: hidden;
+	outline: 0;
+	padding: 6px 12px;
+	margin: 0 4px;
+	border-radius: 4px;
+	background: transparent;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+.random {
+	color: #fff;
+	border: 2px solid #fff;
+}
+
+.random:before {
+	content: "";
+	width: 100%;
+	height: 80%;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translateX(-100%) rotate(45deg);
+	transition: transform 1s;
+}
+
+.random:hover:before {
+	transform: translateX(100%) rotate(45deg);
+}
+
+.copy {
+	color: #fff;
+	border: 2px solid #fff;
+}
+
+.copy:before {
+	content: "";
+	width: 100%;
+	height: 50%;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translate(-100%, 40%) rotate(45deg);
+	transition: transform 1s;
+}
+
+.copy:hover:before {
+	transform: translateX(100%) rotate(45deg);
+}
+
+.palette {
+	color: #fff;
+	border: 2px solid #fff;
+}
+
+.palette:before {
+	content: "";
+	width: 100%;
+	height: 50%;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translate(-100%, 40%) rotate(45deg);
+	transition: transform 1s;
+}
+
+.palette:hover:before {
+	transform: translateX(100%) rotate(45deg);
+}
+
+#copy-hint {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	border: 3px solid rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+	background: rgba(0, 0, 0, 0.3);
+	color: #fff;
+	padding: 6px 12px;
+	font-size: 18px;
+	opacity: 0;
+	z-index: 20;
+}
