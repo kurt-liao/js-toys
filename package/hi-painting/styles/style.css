@@ -1,0 +1,28 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	overflow: hidden;
+}
+
+#canvas-wrapper {
+	border: 2px solid #000;
+}
+
+.palette {
+	position: absolute;
+	border: 2px solid #000;
+	left: 0;
+	top: 50%;
+	transform: translate(30%, -60%);
+}
