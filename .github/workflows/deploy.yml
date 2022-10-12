@@ -8,8 +8,9 @@ jobs:
     name: Build and deploy gh-pages
     env:
       SECRET: ${{secrets.COMMIT_SECRET}}
-      USER_NAME: "change to your name"
-      USER_EMAIL: "change to your email"
+      USER_NAME: "kurt-liao"
+      USER_EMAIL: "vermouth0226@gmail.com"
+      SOURCE_DIR: "package/*"
       PUBLISH_DIR: ./dist
     runs-on: ubuntu-latest
     steps:
@@ -17,7 +18,7 @@ jobs:
       - name: Commit files
         run: |
           mkdir $PUBLISH_DIR
-          cp -r src/* $PUBLISH_DIR/
+          cp -r $SOURCE_DIR $PUBLISH_DIR/
           cd $PUBLISH_DIR
           git init
           git config --local user.email $USER_EMAIL
