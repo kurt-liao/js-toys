@@ -3,7 +3,7 @@
 Implement some web api in vanilla.
 ## List
 
-- [The Editor](/vanilla-components/the-editor)
-- [Drag and Drop](/vanilla-components/dnd)
-- [Hi Painting](/vanilla-components/hi-painting)
-- [Color Palette Generator](/vanilla-components/color-palette-generator)
+- [The Editor](/vanilla-works/the-editor)
+- [Drag and Drop](/vanilla-works/dnd)
+- [Hi Painting](/vanilla-works/hi-painting)
+- [Color Palette Generator](/vanilla-works/color-palette-generator)
