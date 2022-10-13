@@ -5,6 +5,7 @@ on:
       - main
 jobs:
   build:
+    if: "!contains(github.event.commits[0].message, '[skip ci]')"
     name: Build and deploy gh-pages
     env:
       SECRET: ${{secrets.COMMIT_SECRET}}

@@ -1,0 +1,26 @@
+{
+  "name": "vanilla-components",
+  "version": "1.0.0",
+  "description": "Implement some web api in vanilla.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier.lint": "prettier --check .",
+    "prettier.fix": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kurt-liao/vanilla-components.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kurt-liao/vanilla-components/issues"
+  },
+  "homepage": "https://github.com/kurt-liao/vanilla-components#readme",
+  "devDependencies": {
+    "esbuild": "^0.15.10",
+    "prettier": "^2.7.1",
+    "tsm": "^2.2.2"
+  }
+}

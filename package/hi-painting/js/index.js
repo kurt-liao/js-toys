@@ -1,5 +1,5 @@
 var $ = function (id) {
-	return document.getElementById(id);
+  return document.getElementById(id);
 };
 
 var canvasWrapper = $("canvas-wrapper");
@@ -8,41 +8,41 @@ var colorPicker = $("color-picker");
 var canvas = (this.__canvas = new fabric.Canvas("sheet"));
 
 window.onload = function () {
-	init();
+  init();
 
-	canvas.setDimensions({
-		width: window.innerWidth,
-		height: window.innerHeight
-	});
+  canvas.setDimensions({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
 
-	canvas.isDrawingMode = true;
-	canvas.freeDrawingBrush.width = 5;
-	canvas.freeDrawingBrush.color = "#ff0000";
+  canvas.isDrawingMode = true;
+  canvas.freeDrawingBrush.width = 5;
+  canvas.freeDrawingBrush.color = "#ff0000";
 };
 
 function init() {
-	initListeners();
+  initListeners();
 }
 
 function changeColor(color) {
-	canvas.freeDrawingBrush.color = color;
+  canvas.freeDrawingBrush.color = color;
 }
 
 function initListeners() {
-	window.onresize = () => {
-		const ratio = canvas.getWidth() / canvas.getHeight();
-		const containerWidth = canvasWrapper.clientWidth;
-		const scale = containerWidth / canvas.getWidth();
-		const zoom = canvas.getZoom() * scale;
+  window.onresize = () => {
+    const ratio = canvas.getWidth() / canvas.getHeight();
+    const containerWidth = canvasWrapper.clientWidth;
+    const scale = containerWidth / canvas.getWidth();
+    const zoom = canvas.getZoom() * scale;
 
-		canvas.setDimensions({
-			width: containerWidth,
-			height: containerWidth / ratio
-		});
-		canvas.setViewportTransform([zoom, 0, 0, zoom, 0, 0]);
-	};
+    canvas.setDimensions({
+      width: containerWidth,
+      height: containerWidth / ratio
+    });
+    canvas.setViewportTransform([zoom, 0, 0, zoom, 0, 0]);
+  };
 
-	colorPicker.onchange = (e) => {
-		canvas.freeDrawingBrush.color = e.target.value;
-	};
+  colorPicker.onchange = (e) => {
+    canvas.freeDrawingBrush.color = e.target.value;
+  };
 }

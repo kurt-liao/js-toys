@@ -1,0 +1,7 @@
+*.md
+**/**/*.md
+node_modules
+
+package/**/lib/*.*
+
+.github
