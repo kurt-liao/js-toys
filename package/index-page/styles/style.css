@@ -146,8 +146,12 @@ img {
 	max-width: 100%;
 }
 
-.wrapper {
+body {
+	overflow: hidden;
 	font-family: "Signika Negative", sans-serif;
+}
+
+.wrapper {
 	width: auto;
 	position: fixed;
 	top: 50%;
@@ -172,12 +176,20 @@ img {
 .link {
 	margin-right: 1rem;
 	font-size: 1em;
+	position: relative;
+	display: block;
+	overflow: hidden;
+	transition: all .1s ease-in;
 }
 
 .link span {
 	color: rgba(212, 212, 212, 0.7);
 	margin-right: 0.5rem;
 	user-select: none;
+}
+
+.link:hover {
+	transform: scale(1.2);
 }
 
 .link b {
@@ -190,4 +202,51 @@ img {
 
 .link:hover b {
 	color: #7e7b7b;
+}
+
+.link span::before {
+	content: '';
+	width: 30%;
+	height: 50%;
+	background: #55A6CD;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	opacity: .3;
+	transform: translateX(-120%);
+	transition: all .1s ease-in;
+	/* visibility: hidden; */
+}
+
+.link:hover span::before {
+	transform: translateX(100%);
+}
+
+.link span::after {
+	content: '';
+	width: 30%;
+	height: 50%;
+	background: #96C93C;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	opacity: .3;
+	transform: translate(120%, -50%);
+	transition: all .1s ease-in;
+}
+
+.link:hover span::after {
+	transform: translate(-200%, -50%);
+}
+
+.go-github {
+	position: absolute;
+	bottom: 10%;
+	right: 0;
+	transform: translateX(100%);
+	transition: all .3s ease-in;
+}
+
+.go-github:hover {
+	text-decoration: underline;
 }
