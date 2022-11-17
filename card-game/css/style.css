@@ -1,0 +1,33 @@
+body{
+	background: #2bc0e4; /* fallback for old browsers */
+  	background: -webkit-linear-gradient(to right, #2bc0e4, #eaecc6); /* Chrome 10-25, Safari 5.1-6 */
+  	background: linear-gradient(to right, #2bc0e4, #eaecc6);
+}
+img{
+	height: 150px;
+	width:200px;
+	border-radius: 20px;
+	margin-left: 10px;
+	margin-bottom: 5px;
+}
+img:hover{
+	opacity: 0.8;
+	border-radius: 50px;
+}
+.title{
+	font-family: 微軟正黑體;
+	font-size: 36px;
+	font-weight: bold;
+	color:	#666666;
+}
+#counter{
+	font-family: fantasy;
+	font-size: 20px;
+	margin-bottom: 10px; 
+	color:red;
+}
+#counterBtn{
+	font-size: 20px;
+	font-family: fantasy;
+	color:red;
+}

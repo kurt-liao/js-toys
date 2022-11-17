@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hi Painting</title>
+    <script type="text/javascript" src="./lib/fabric-5.2.4.min.js"></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="icon" href="../assets/logo.png" />
+  </head>
+  <body>
+    <div id="canvas-wrapper"><canvas id="sheet"></canvas></div>
+
+    <svg height="260" width="80" class="palette" id="palette">
+      <circle cx="20" cy="20" r="15" fill="red" onclick="changeColor('red')" />
+      <circle
+        cx="55"
+        cy="20"
+        r="15"
+        fill="blue"
+        onclick="changeColor('blue')"
+      />
+
+      <circle
+        cx="20"
+        cy="55"
+        r="15"
+        fill="yellow"
+        onclick="changeColor('yellow')"
+      />
+      <circle
+        cx="55"
+        cy="55"
+        r="15"
+        fill="green"
+        onclick="changeColor('green')"
+      />
+
+      <circle
+        cx="20"
+        cy="90"
+        r="15"
+        fill="pink"
+        onclick="changeColor('pink')"
+      />
+      <circle
+        cx="55"
+        cy="90"
+        r="15"
+        fill="black"
+        onclick="changeColor('black')"
+      />
+
+      <circle
+        cx="20"
+        cy="125"
+        r="15"
+        fill="brown"
+        onclick="changeColor('brown')"
+      />
+      <circle
+        cx="55"
+        cy="125"
+        r="15"
+        fill="gray"
+        onclick="changeColor('gray')"
+      />
+
+      <circle
+        cx="20"
+        cy="160"
+        r="15"
+        fill="purple"
+        onclick="changeColor('purple')"
+      />
+      <circle
+        cx="55"
+        cy="160"
+        r="15"
+        fill="aqua"
+        onclick="changeColor('aqua')"
+      />
+
+      <circle
+        cx="20"
+        cy="195"
+        r="15"
+        fill="teal"
+        onclick="changeColor('teal')"
+      />
+      <circle
+        cx="55"
+        cy="195"
+        r="15"
+        fill="lime"
+        onclick="changeColor('lime')"
+      />
+      <foreignObject x="12" y="220" width="200" height="150">
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          <input id="color-picker" type="color" />
+        </body>
+      </foreignObject>
+      Sorry, your browser does not support inline SVG.
+    </svg>
+
+    <!-- <input
+      id="color-picker"
+      type="color"
+      style="position: absolute; top: 50%; left: 50%"
+    /> -->
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>

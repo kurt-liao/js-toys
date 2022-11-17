@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@500&display=swap");
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Signika Negative", sans-serif;
+}
+
+.wrapper {
+  width: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 1em;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0px, 1fr));
+  column-gap: 0.25rem;
+  row-gap: 1rem;
+  /* overflow: hidden; */
+}
+
+.link {
+  margin-right: 1rem;
+  font-size: 1em;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  transition: all 0.1s ease-in;
+}
+
+.link span {
+  color: rgba(212, 212, 212, 0.7);
+  margin-right: 0.5rem;
+  user-select: none;
+}
+
+.link:hover {
+  transform: scale(1.2);
+}
+
+.link b {
+  color: #a9a8a8;
+}
+
+.link:hover span {
+  color: #bdbbbb;
+}
+
+.link:hover b {
+  color: #7e7b7b;
+}
+
+.link span::before {
+  content: "";
+  width: 30%;
+  height: 50%;
+  background: #55a6cd;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0.3;
+  transform: translateX(-120%);
+  transition: all 0.1s ease-in;
+  /* visibility: hidden; */
+}
+
+.link:hover span::before {
+  transform: translateX(100%);
+}
+
+.link span::after {
+  content: "";
+  width: 30%;
+  height: 50%;
+  background: #96c93c;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0.3;
+  transform: translate(120%, -50%);
+  transition: all 0.1s ease-in;
+}
+
+.link:hover span::after {
+  transform: translate(-200%, -50%);
+}
+
+.go-github {
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  transform: translateX(100%);
+  transition: all 0.3s ease-in;
+}
+
+.go-github:hover {
+  text-decoration: underline;
+}
