@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Patatap</title>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.5/paper-full.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.14/howler.core.min.js"></script>
-	<script type="text/paperscript" canvas="Canvas">
-		var circles = [];
-		function onKeyDown(event) {
-		if(keyData[event.key]){
-			var maxPoint = new Point(view.size.width,view.size.height);
-			var randomPoint = Point.random();
-			var point = maxPoint * randomPoint;
-			var newCircle = new Path.Circle(point, 500);
-			newCircle.fillColor = keyData[event.key].color;
-			keyData[event.key].sound.play();
-			circles.push(newCircle);
-		}
-	}
-	function onFrame(event){
-		for(var i =0;i<circles.length;i++){
-			circles[i].fillColor.hue += 1;
-			circles[i].scale(.9);
-			if(circles[i].area < 1){
-      		circles[i].remove(); // remove the circle from the canvas
-      		circles.splice(i, 1); // remove the circle from the array
-      		i--; // decrement i so that the loop doesn't skip a circle because of .splice()
-      		console.log(circles);
-    }
-		}
-	}
-	</script>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Patatap</title>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.5/paper-full.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.14/howler.core.min.js"></script>
+    <script type="text/paperscript" canvas="Canvas">
+      	var circles = [];
+      	function onKeyDown(event) {
+      	if(keyData[event.key]){
+      		var maxPoint = new Point(view.size.width,view.size.height);
+      		var randomPoint = Point.random();
+      		var point = maxPoint * randomPoint;
+      		var newCircle = new Path.Circle(point, 500);
+      		newCircle.fillColor = keyData[event.key].color;
+      		keyData[event.key].sound.play();
+      		circles.push(newCircle);
+      	}
+      }
+      function onFrame(event){
+      	for(var i =0;i<circles.length;i++){
+      		circles[i].fillColor.hue += 1;
+      		circles[i].scale(.9);
+      		if(circles[i].area < 1){
+           		circles[i].remove(); // remove the circle from the canvas
+           		circles.splice(i, 1); // remove the circle from the array
+           		i--; // decrement i so that the loop doesn't skip a circle because of .splice()
+           		console.log(circles);
+         }
+      	}
+      }
+    </script>
 
-	<link rel="stylesheet" href="circles.css">
-</head>
-<body>
-	<div class="hint">
-		<p>Press any key, A~Z to have different sound</p>
-	</div>
-	<canvas id="Canvas" resize></canvas>
-	
-	
-	<script src="keyData.js"></script>
-</body> 
+    <link rel="stylesheet" href="circles.css" />
+  </head>
+  <body>
+    <div class="hint">
+      <p>Press any key, A~Z to have different sound</p>
+    </div>
+    <canvas id="Canvas" resize></canvas>
+
+    <script src="keyData.js"></script>
+  </body>
 </html>
