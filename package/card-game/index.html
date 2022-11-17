@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="img/mouse.png" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.5/paper-full.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.14/howler.core.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>韭菜、韭黃、韭菜花分辨</title>
+    <script language="javascript">
+      //game
+      var pai = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6];
+      var flag = false;
+      var isWin = false;
+      var oneid = -1;
+      //sound
+      var audio = new Audio("sound/2.mp3");
+      var yields = new Audio("sound/yield.mp3");
+      //time
+
+      //function
+
+      function fanpai(id) {
+        if (pai[id] == -1) {
+          return;
+        }
+        document.getElementById("img" + id).src =
+          "img/image" + pai[id] + ".jpg";
+        if (flag) {
+          //翻第2張
+          if (pai[id] == pai[oneid]) {
+            pai[id] = -1;
+            pai[oneid] = -1;
+          } else {
+            setTimeout("koupai(" + id + "," + oneid + ")", 400);
+          }
+          oneid = -1;
+          flag = false;
+        } else {
+          //翻第1張
+          oneid = id;
+          flag = true;
+        }
+        checkSuccess();
+        reload();
+      }
+      //載入頁面重新洗牌
+      function xipai() {
+        var a, b, temp;
+        for (i = 0; i < 12; i++) {
+          var a = Math.floor(Math.random() * 12);
+          var b = Math.floor(Math.random() * 12);
+          temp = pai[a];
+          pai[a] = pai[b];
+          pai[b] = temp;
+        }
+      }
+      //牌不同扣住
+      function koupai(id, oneid) {
+        document.getElementById("img" + id).src = "img/1.jpg";
+        document.getElementById("img" + oneid).src = "img/1.jpg";
+      }
+      //檢驗是否全部成功
+      function checkSuccess() {
+        for (var i = 0; i < 12; i++) {
+          if (pai[i] != -1) {
+            return;
+          }
+        }
+
+        //alert("恭喜，答對囉，按確定再挑戰一次");
+        yields.play();
+        isWin = true;
+        //location.reload();
+      }
+      function reload() {
+        if (isWin == true) {
+          counting = true;
+          setTimeout("location.reload()", 4000);
+        } else return;
+      }
+      function AudiSound() {
+        audio.play();
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+      <br />
+      <h1 class="title">韭菜、韭黃、韭菜花分辨</h1>
+      <div id="counter">00:00:00.000</div>
+      <button type="button" class="btn btn-warning" id="counterBtn">
+        Start
+      </button>
+      <br />
+      <table style="margin-top: 10px">
+        <tr>
+          <td onmousedown="AudiSound()">
+            <img src="img/1.jpg" id="img0" onclick="fanpai(0)" />
+          </td>
+          <td onmousedown="AudiSound()">
+            <img src="img/1.jpg" id="img1" onclick="fanpai(1)" />
+          </td>
+          <td onmousedown="AudiSound()">
+            <img src="img/1.jpg" id="img2" onclick="fanpai(2)" />
+          </td>
+          <td onmousedown="AudiSound()">
+            <img src="img/1.jpg" id="img3" onclick="fanpai(3)" />
+          </td>
+        </tr>
+        <tr>
+          <td onmousedown="AudiSound()">
+            <img src="img/1.jpg" id="img4" onclick="fanpai(4)" />
+          </td>
+          <td onmousedown="AudiSound()">
+            <img src="img/1.jpg" id="img5" onclick="fanpai(5)" />
+          </td>
+          <td onmousedown="AudiSound()">
+            <img src="img/1.jpg" id="img6" onclick="fanpai(6)" />
+          </td>
+          <td onmousedown="AudiSound()">
+            <img src="img/1.jpg" id="img7" onclick="fanpai(7)" />
+          </td>
+        </tr>
+        <tr>
+          <td onmousedown="AudiSound()">
+            <img src="img/1.jpg" id="img8" onclick="fanpai(8)" />
+          </td>
+          <td onmousedown="AudiSound()">
+            <img src="img/1.jpg" id="img9" onclick="fanpai(9)" />
+          </td>
+          <td onmousedown="AudiSound()">
+            <img src="img/1.jpg" id="img10" onclick="fanpai(10)" />
+          </td>
+          <td onmousedown="AudiSound()">
+            <img src="img/1.jpg" id="img11" onclick="fanpai(11)" />
+          </td>
+        </tr>
+        <tr></tr>
+      </table>
+    </center>
+  </body>
+  <script language="javascript">
+    var startTime = 0;
+    var intervalId;
+    function updateCounter() {
+      let currentTime = Date.now();
+      let msecond = ("0" + ((currentTime - startTime) % 1000)).substr(-3, 3);
+      let counter = Math.floor((currentTime - startTime) / 1000);
+      let hour = ("0" + Math.floor(counter / 3600)).substr(-2, 2);
+      let minute = ("0" + Math.floor((counter % 3600) / 60)).substr(-2, 2);
+      let second = ("0" + Math.floor(counter % 60)).substr(-2, 2);
+      document.getElementById(
+        "counter"
+      ).textContent = `${hour}:${minute}:${second}.${msecond}`;
+    }
+
+    var counting = false;
+    var btn = document.getElementById("counterBtn");
+    btn.addEventListener("click", function () {
+      if (counting) {
+        clearInterval(intervalId);
+      } else {
+        startTime = Date.now();
+        intervalId = setInterval(updateCounter, 15);
+      }
+
+      counting = !counting;
+      btn.textContent = counting ? "Stop" : "Start";
+    });
+  </script>
+  <script language="javascript">
+    xipai();
+  </script>
+</html>
