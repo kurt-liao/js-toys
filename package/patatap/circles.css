@@ -1,0 +1,24 @@
+canvas{
+	width: 100%;
+	height: 100%;
+	background: 	#DDDDDD;
+}
+
+body, html{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+.hint{
+	margin: 0 auto;
+	text-align: center;
+	background: white;
+}
+.hint p{
+    display: inline-block;
+    background: white;
+    color: #666666;
+    font-family: "Lucida Grande", verdana, sans-serif;
+    font-size: 12px;
+    line-height: 32px;
+}
